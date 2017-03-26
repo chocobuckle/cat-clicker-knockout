@@ -1,6 +1,7 @@
 var viewModel = function() {
   this.name = ko.observable('Tabby');
   this.level = ko.observable();
+  this.nicknames = ko.observableArray([{name: 'Thomas'}, {name:'Conor'}, {name:'Linda'}, {name:'Snufflekins'}, {name:'Paris'}]);
   this.clickCount = ko.observable(0);
   this.imgSrc = ko.observable('./img/22252709_010df3379e_z.jpg');
 
