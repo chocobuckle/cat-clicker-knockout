@@ -11,7 +11,7 @@ var initialCats = [
     name : 'Tiger',
     imgSrc : 'img/4154543904_6e2428c421_z.jpg',
     imgAttribution : 'https://www.flickr.com/photos/xshamx/4154543904',
-    nicknames: ['Felix', 'Simon', 'Harry']
+    nicknames: ['Felix']
   },
   {
     clickCount : 0,
@@ -25,14 +25,14 @@ var initialCats = [
     name : 'Shadow',
     imgSrc : 'img/1413379559_412a540d29_z.jpg',
     imgAttribution : 'https://www.flickr.com/photos/malfet/1413379559',
-    nicknames: ['Thomas', 'Peter', 'Willy']
+    nicknames: ['Thomas']
   },
   {
     clickCount : 0,
     name : 'Sleepy',
     imgSrc : 'img/9648464288_2516b35537_z.jpg',
     imgAttribution : 'https://www.flickr.com/photos/onesharp/9648464288',
-    nicknames: ['Paula', 'Sarah', 'Louise']
+    nicknames: ['Paula', 'Sarah']
   }
 ];
 
@@ -69,8 +69,8 @@ var viewModel = function() {
 
   this.currentCat = ko.observable(this.catList()[0]);
 
-  this.selectCat = function(cat) {
-    self.currentCat(cat);
+  this.selectCat = function(clickedCat) {
+    self.currentCat(clickedCat);
   };
 
   this.incrementCounter = function() {
