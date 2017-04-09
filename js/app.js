@@ -43,17 +43,17 @@ var Cat = function(data) {
   this.clickCount = ko.observable(data.clickCount);
   this.imgSrc = ko.observable(data.imgSrc);
 
-  this.increaseLevel = ko.computed(function() {
+  this.calculateLevel = ko.computed(function() {
     if (this.clickCount() < 5) {
-      return this.level('Newborn');
+      this.level('Newborn');
     } else if(this.clickCount() < 10) {
-      return this.level('Infant');
+      this.level('Infant');
     } else if (this.clickCount() < 15) {
-      return this.level('Teen');
+      this.level('Teen');
     } else if (this.clickCount() < 20) {
-      return this.level('Adult');
+      this.level('Adult');
     } else if (this.clickCount() <  25) {
-      return this.level('Wise Elder');
+      this.level('Wise Elder');
     }
   }, this);
 };
