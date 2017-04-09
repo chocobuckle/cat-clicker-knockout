@@ -3,25 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Cat Clicker</title>
+    <style type="text/css">
+        #cat-list {
+          border: .25em solid #000;
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          padding-left: 0;
+          width: 10%;
+        }
+        .cat-name {
+          border-bottom: 0.125em solid #000;
+          font-size: 1.5rem;
+          padding: .75em;
+          text-align: center;
+        }
+
+        .cat-name:nth-child(5) {
+          border-bottom: none;
+        }
+
+        .cat-name:hover {
+          background-color: pink;
+          cursor: pointer;
+        }
+
+        img {
+          border: .5em solid #9d8b33;
+        }
+    </style>
 </head>
 <body>
-    <ul id="cat-list"></ul>
+    <ul id="cat-list" data-bind="foreach: catList">
+        <li data-bind="text: name, click: $parent.selectCat" class="cat-name"></li>
+    </ul>
     <div id="cat" data-bind="with: currentCat">
-
         <h2 id="cat-name" data-bind="text: name"></h2>
         <div id="cat-level" data-bind="text: level"></div>
         <div id="cat-count" data-bind="text: clickCount"></div>
         <img id="cat-img" src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
 
-        <ul data-bind="foreach: nicknames">
-            <li data-bind="text: name"></li>
-        </ul>
-
+        <h3>Nickname:</h3>        
+        <p data-bind="text: nickname"></p>
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
-    <script type="text/javascript">
-        ko.applyBindings(new viewModel());
-    </script>
 </body>
 </html>
