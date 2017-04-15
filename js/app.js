@@ -1,4 +1,4 @@
-var initialCats = [
+var model = [
   {
     clickCount : 0,
     name : 'Tabby',
@@ -63,7 +63,7 @@ var viewModel = function() {
 
   this.catList = ko.observableArray();
 
-  initialCats.forEach(function(catItem) {
+  model.forEach(function(catItem) {
     this.catList.push(new Cat(catItem));
   }, this);
 
